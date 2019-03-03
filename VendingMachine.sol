@@ -1,23 +1,36 @@
 pragma solidity ^0.5.0;
 
+/**
+ * @title VendingMachine 
+ * @dev see https://github.com/scammi/VendingMachine
+*/
+
 contract VendingMachine{ 
-    
-    event payed(address _client, address _destinatary, uint _amountPayed);
-    
-    function forward(address payable _destinatary, uint _price)public payable{
+   
+//Triggers event when payment is completed
+    event payed(address _client, address _destinatary, uint _amountPay);
+
+/**
+*@dev fowards payments to owner of service
+*triggers event when successfully paid
+*returns change when payment exceeds price 
+*@param _destinatary address belongs to the owner of the service
+*@param _price uint the price of the service
+*/ 
+    function forward(address payable _destinatary, uint _price) public payable{
         require(msg.value >= _price, "Not enough was payed.");
     
-        uint amountPayed = msg.value;
+        uint amountPaid = msg.value;
         
-        if (amountPayed > _price){
-            uint change = (amountPayed - _price);
+        if (amountPaid > _price){
+            uint change = (amountPaid - _price);
             
             msg.sender.transfer(change);
             
             _destinatary.transfer(_price);
         
         } else {
-        _destinatary.transfer(amountPayed);
+        _destinatary.transfer(amountPaid);
     
         }
         
