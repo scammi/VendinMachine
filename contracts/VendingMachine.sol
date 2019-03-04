@@ -4,12 +4,18 @@ pragma solidity ^0.5.0;
  * @title VendingMachine 
  * @dev see https://github.com/scammi/VendingMachine
 */
+import "zos-lib/contracts/Initializable.sol";
 
-contract VendingMachine{ 
+contract VendingMachine is Initializable{ 
    
 //Triggers event when payment is completed
     event payed(address _client, address _destinatary, uint _amountPay);
-
+/**
+*@dev contructor initialize sets owner of the contract to the deployer
+*/
+    function initialize() initializer public {
+       address owner = msg.sender;  
+    }
 /**
 *@dev fowards payments to owner of service
 *triggers event when successfully paid
