@@ -24,4 +24,8 @@ contract VendingMachine {
 
     }
 
+    function getBalance(address addrr) public view returns(uint) {
+        return (addrr.balance);
+    }
+
 }
