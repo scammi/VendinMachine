@@ -866,12 +866,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xDD7dDAE821a09590b4c8a09F94d52078cf6dF743",
-      "transactionHash": "0x65e896ae82275430746560b562be9e47c9f95050ff422ff7f009f26164619dca"
+      "address": "0x10bB281cCD56fe40F0B73c8AADc84b2C5D77982c",
+      "transactionHash": "0xc26654dc66ac456ccaa55c51e3fde165ee4f47eb0340b98c4ed3636a4bce0ea3"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-06T23:41:46.480Z",
+  "updatedAt": "2019-03-08T13:34:58.221Z",
   "devdoc": {
     "details": "see https://github.com/scammi/VendingMachine",
     "methods": {},
