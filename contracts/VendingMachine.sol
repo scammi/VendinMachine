@@ -13,9 +13,7 @@ contract VendingMachine {
 /**
 *@dev fowards payments to owner of service
 *triggers event when successfully foward payment
-*returns change when payment exceeds price
 *@param _destinatary address belongs to the owner of the service
-*@param _price uint the price of the service
 */
     function forward(address payable _destinatary) public payable {
         _destinatary.transfer(msg.value);
