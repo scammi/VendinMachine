@@ -38,22 +38,42 @@
       "stateMutability": "payable",
       "type": "function",
       "signature": "0x101e8952"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "addrr",
+          "type": "address"
+        }
+      ],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xf8b2cb4f"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b5061019f806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063101e895214610046575b600080fd5b6100886004803603602081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008a565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156100d0573d6000803e3d6000fd5b507f9def4e2802183d68ce90a6a226a2962b59298616c27165f12c4fbc5c84cdd778338234604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15056fea165627a7a72305820b61fbe5a33823dca862f75b6eaf1a4f06d62e0dfdaa27f1c796276b0bcf93ad00029",
-  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063101e895214610046575b600080fd5b6100886004803603602081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008a565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156100d0573d6000803e3d6000fd5b507f9def4e2802183d68ce90a6a226a2962b59298616c27165f12c4fbc5c84cdd778338234604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15056fea165627a7a72305820b61fbe5a33823dca862f75b6eaf1a4f06d62e0dfdaa27f1c796276b0bcf93ad00029",
-  "sourceMap": "111:571:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;111:571:1;;;;;;;",
-  "deployedSourceMap": "111:571:1:-;;;;;;;;;;;;;;;;;;;;;;;;510:169;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;510:169:1;;;;;;;;;;;;;;;;;;;;;;;582:12;:21;;:32;604:9;582:32;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;582:32:1;630:41;635:10;647:12;661:9;630:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;510:169;:::o",
-  "source": "pragma solidity ^0.5.0;\n\n/**\n * @title VendingMachine\n * @dev see https://github.com/scammi/VendingMachine\n*/\n\ncontract VendingMachine {\n\n//Triggers event when payment is completed\n    event Paid(address _client, address _destinatary, uint _amountPay);\n\n/**\n*@dev fowards payments to owner of service\n*triggers event when successfully foward payment\n*returns change when payment exceeds price\n*@param _destinatary address belongs to the owner of the service\n*@param _price uint the price of the service\n*/\n    function forward(address payable _destinatary) public payable {\n        _destinatary.transfer(msg.value);\n\n        emit Paid(msg.sender, _destinatary, msg.value);\n\n    }\n\n}\n",
-  "sourcePath": "/home/skamy/proyects/VendinMachine/Testing/contracts/VendingMachine.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b506101b7806100206000396000f3fe60806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663101e89528114610050578063f8b2cb4f14610085575b600080fd5b6100836004803603602081101561006657600080fd5b503573ffffffffffffffffffffffffffffffffffffffff166100d7565b005b34801561009157600080fd5b506100c5600480360360208110156100a857600080fd5b503573ffffffffffffffffffffffffffffffffffffffff16610171565b60408051918252519081900360200190f35b60405173ffffffffffffffffffffffffffffffffffffffff8216903480156108fc02916000818181858888f19350505050158015610119573d6000803e3d6000fd5b506040805133815273ffffffffffffffffffffffffffffffffffffffff83166020820152348183015290517f9def4e2802183d68ce90a6a226a2962b59298616c27165f12c4fbc5c84cdd7789181900360600190a150565b73ffffffffffffffffffffffffffffffffffffffff16319056fea165627a7a72305820e47b7b4ddec1a02da7cb3cbcecf227dfaf321fe1deace3d1d03e64727d518da70029",
+  "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663101e89528114610050578063f8b2cb4f14610085575b600080fd5b6100836004803603602081101561006657600080fd5b503573ffffffffffffffffffffffffffffffffffffffff166100d7565b005b34801561009157600080fd5b506100c5600480360360208110156100a857600080fd5b503573ffffffffffffffffffffffffffffffffffffffff16610171565b60408051918252519081900360200190f35b60405173ffffffffffffffffffffffffffffffffffffffff8216903480156108fc02916000818181858888f19350505050158015610119573d6000803e3d6000fd5b506040805133815273ffffffffffffffffffffffffffffffffffffffff83166020820152348183015290517f9def4e2802183d68ce90a6a226a2962b59298616c27165f12c4fbc5c84cdd7789181900360600190a150565b73ffffffffffffffffffffffffffffffffffffffff16319056fea165627a7a72305820e47b7b4ddec1a02da7cb3cbcecf227dfaf321fe1deace3d1d03e64727d518da70029",
+  "sourceMap": "111:677:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;111:677:1;;;;;;;",
+  "deployedSourceMap": "111:677:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;510:169;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;510:169:1;;;;;;;685:100;;8:9:-1;5:2;;;30:1;27;20:12;5:2;685:100:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;685:100:1;;;;;;;;;;;;;;;;;;;;;510:169;582:32;;:21;;;;604:9;582:32;;;;;;;;;604:9;582:21;:32;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;630:41:1;;;635:10;630:41;;;;;;;;;661:9;630:41;;;;;;;;;;;;;;;510:169;:::o;685:100::-;764:13;;;;685:100::o",
+  "source": "pragma solidity ^0.5.0;\n\n/**\n * @title VendingMachine\n * @dev see https://github.com/scammi/VendingMachine\n*/\n\ncontract VendingMachine {\n\n//Triggers event when payment is completed\n    event Paid(address _client, address _destinatary, uint _amountPay);\n\n/**\n*@dev fowards payments to owner of service\n*triggers event when successfully foward payment\n*returns change when payment exceeds price\n*@param _destinatary address belongs to the owner of the service\n*@param _price uint the price of the service\n*/\n    function forward(address payable _destinatary) public payable {\n        _destinatary.transfer(msg.value);\n\n        emit Paid(msg.sender, _destinatary, msg.value);\n\n    }\n\n    function getBalance(address addrr) public view returns(uint) {\n        return (addrr.balance);\n    }\n\n}\n",
+  "sourcePath": "/home/skamy/proyects/VendinMachine/contracts/VendingMachine.sol",
   "ast": {
-    "absolutePath": "/home/skamy/proyects/VendinMachine/Testing/contracts/VendingMachine.sol",
+    "absolutePath": "/home/skamy/proyects/VendinMachine/contracts/VendingMachine.sol",
     "exportedSymbols": {
       "VendingMachine": [
-        88
+        100
       ]
     },
-    "id": 89,
+    "id": 101,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -73,9 +93,9 @@
         "contractKind": "contract",
         "documentation": "@title VendingMachine\n@dev see https://github.com/scammi/VendingMachine",
         "fullyImplemented": true,
-        "id": 88,
+        "id": 100,
         "linearizedBaseContracts": [
-          88
+          100
         ],
         "name": "VendingMachine",
         "nodeType": "ContractDefinition",
@@ -196,7 +216,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "604:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -282,7 +302,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "635:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -324,7 +344,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "661:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -439,27 +459,167 @@
               "parameters": [],
               "src": "572:0:1"
             },
-            "scope": 88,
+            "scope": 100,
             "src": "510:169:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 98,
+              "nodeType": "Block",
+              "src": "746:39:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 94,
+                          "name": "addrr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 89,
+                          "src": "764:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 95,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "764:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 96,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "763:15:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 93,
+                  "id": 97,
+                  "nodeType": "Return",
+                  "src": "756:22:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 99,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "name": "addrr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 99,
+                  "src": "705:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "704:15:1"
+            },
+            "returnParameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 92,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 99,
+                  "src": "740:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 91,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "740:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "739:6:1"
+            },
+            "scope": 100,
+            "src": "685:100:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 89,
-        "src": "111:571:1"
+        "scope": 101,
+        "src": "111:677:1"
       }
     ],
-    "src": "0:683:1"
+    "src": "0:789:1"
   },
   "legacyAST": {
-    "absolutePath": "/home/skamy/proyects/VendinMachine/Testing/contracts/VendingMachine.sol",
+    "absolutePath": "/home/skamy/proyects/VendinMachine/contracts/VendingMachine.sol",
     "exportedSymbols": {
       "VendingMachine": [
-        88
+        100
       ]
     },
-    "id": 89,
+    "id": 101,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -479,9 +639,9 @@
         "contractKind": "contract",
         "documentation": "@title VendingMachine\n@dev see https://github.com/scammi/VendingMachine",
         "fullyImplemented": true,
-        "id": 88,
+        "id": 100,
         "linearizedBaseContracts": [
-          88
+          100
         ],
         "name": "VendingMachine",
         "nodeType": "ContractDefinition",
@@ -602,7 +762,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "604:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -688,7 +848,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "635:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -730,7 +890,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 103,
+                          "referencedDeclaration": 115,
                           "src": "661:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -845,18 +1005,158 @@
               "parameters": [],
               "src": "572:0:1"
             },
-            "scope": 88,
+            "scope": 100,
             "src": "510:169:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 98,
+              "nodeType": "Block",
+              "src": "746:39:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 94,
+                          "name": "addrr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 89,
+                          "src": "764:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 95,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "764:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 96,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "763:15:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 93,
+                  "id": 97,
+                  "nodeType": "Return",
+                  "src": "756:22:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 99,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "name": "addrr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 99,
+                  "src": "705:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "704:15:1"
+            },
+            "returnParameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 92,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 99,
+                  "src": "740:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 91,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "740:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "739:6:1"
+            },
+            "scope": 100,
+            "src": "685:100:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 89,
-        "src": "111:571:1"
+        "scope": 101,
+        "src": "111:677:1"
       }
     ],
-    "src": "0:683:1"
+    "src": "0:789:1"
   },
   "compiler": {
     "name": "solc",
@@ -867,11 +1167,11 @@
       "events": {},
       "links": {},
       "address": "0x10bB281cCD56fe40F0B73c8AADc84b2C5D77982c",
-      "transactionHash": "0xc26654dc66ac456ccaa55c51e3fde165ee4f47eb0340b98c4ed3636a4bce0ea3"
+      "transactionHash": "0x05e7a5f67d86f813996e50593b80a57d376e57b7335d0041696608805982f962"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-08T13:34:58.221Z",
+  "updatedAt": "2019-03-13T19:20:09.124Z",
   "devdoc": {
     "details": "see https://github.com/scammi/VendingMachine",
     "methods": {},

@@ -1,0 +1,29 @@
+{
+  "name": "vendingmachin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bn.js": "^4.11.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scammi/VendinMachine.git"
+  },
+  "keywords": [
+    "vending"
+  ],
+  "author": "scammi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scammi/VendinMachine/issues"
+  },
+  "homepage": "https://github.com/scammi/VendinMachine#readme"
+}

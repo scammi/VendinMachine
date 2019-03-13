@@ -1,28 +1,27 @@
 var VendingMachine = artifacts.require("VendingMachine.sol");
 
+
 contract("First test", async accounts =>  {
 
     it("Forwards payment", async () => {
       let ins = await VendingMachine.deployed();
-      let value = 1e18;
-      let balance2 = await ins.getBalance(accounts[1]);
-      let balance1 = await ins.getBalance(accounts[2]);
-      await ins.forward(accounts[2], {from: accounts[1], value:value });
+      let sender = accounts[1];
+      let receiver = accounts[2];
+      let value = 1000000000000000000;
+      let balanceSenderBeforeTx = Number(await web3.eth.getBalance(accounts[1]));
 
-      newBalance2 = balance2 + (value.bigNo());
-      balance2 = balance.toString();
-      newBalance2 = newBalance2.toString();
-    //  balance1 = balance1.bigNo().toNumber();
-    //  balance2 = balance2.bigNo().toNumber();
+      let receipt = await ins.forward(receiver,{from:sender, value:value});
 
-      assert.equal(balance2, newBalance2)
-
-      //compare balance before trans and after trans
-      //before = balance before
-      //after trans = balance + value
+      let balanceSenderAfterTx = Number(await web3.eth.getBalance(accounts[1]));
+      let gasUsed = receipt.receipt.gasUsed;
+      let tx = await web3.eth.getTransaction(receipt.tx);
+      let gasPrice = tx.gasPrice;
 
 
-      console.log(balance1, balance2);
+    //  console.log(newBalanceAfter+finalSent);
+        console.log(balanceSenderAfterTx + value + (gasPrice*(gasUsed)), balanceSenderBeforeTx)
+
+      assert.equal(balanceSenderAfterTx + value + (gasPrice*(gasUsed)), balanceSenderBeforeTx, "Must be equal");
     });
 
 });
