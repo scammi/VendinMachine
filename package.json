@@ -1,0 +1,26 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "EVM zeppelin-os package that forwards payments and emits event of the transaction",
+  "main": "index.js",
+  "dependencies": {
+    "truffle": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scammi/VendinMachine.git"
+  },
+  "keywords": [
+    "EVM"
+  ],
+  "author": "Santiago Cammi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scammi/VendinMachine/issues"
+  },
+  "homepage": "https://github.com/scammi/VendinMachine#readme"
+}

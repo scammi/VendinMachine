@@ -1,0 +1,35 @@
+{
+  "contracts": {
+    "VendingMachine": {
+      "address": "0x07a457d878BF363E0Bb5aa0B096092f941e19962",
+      "constructorCode": "608060405234801561001057600080fd5b5061019f806100206000396000f3fe",
+      "bodyBytecodeHash": "e8f8d43bf9f05a87c2ba3d98d2602e832853925c8cf281de896e9ba8c5513112",
+      "localBytecodeHash": "907955e36140acd2a4bc450f43bad12afe5c791324e9b03dda07b9e59183ce87",
+      "deployedBytecodeHash": "907955e36140acd2a4bc450f43bad12afe5c791324e9b03dda07b9e59183ce87",
+      "types": {},
+      "storage": [],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "VendingMachine/VendingMachine": [
+      {
+        "address": "0xBe0B0f08A599F07699E98A9D001084e97b9a900A",
+        "version": "0.1.0",
+        "implementation": "0x07a457d878BF363E0Bb5aa0B096092f941e19962"
+      }
+    ]
+  },
+  "zosversion": "2.2",
+  "version": "0.1.0",
+  "proxyAdmin": {
+    "address": "0xFA33c8EF8b5c4f3003361c876a298D1DB61ccA4e"
+  }
+}

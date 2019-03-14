@@ -1,0 +1,8 @@
+{
+  "zosversion": "2.2",
+  "name": "VendingMachine",
+  "version": "0.1.0",
+  "contracts": {
+    "VendingMachine": "VendingMachine"
+  }
+}
