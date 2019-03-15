@@ -1,0 +1,91 @@
+{
+  "contracts": {
+    "VendingMachine": {
+      "address": "0x07a457d878BF363E0Bb5aa0B096092f941e19962",
+      "constructorCode": "608060405234801561001057600080fd5b50610348806100206000396000f3fe",
+      "bodyBytecodeHash": "e387494a40d221d7475df271ec9eb0ff69798aa75b2957419c9b4b53a475c894",
+      "localBytecodeHash": "b75bcd76611a048144cce5c0974aeeb0ea323cf2b866de39cff8d73f8762adb5",
+      "deployedBytecodeHash": "b75bcd76611a048144cce5c0974aeeb0ea323cf2b866de39cff8d73f8762adb5",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 51,
+          "type": "t_bool",
+          "src": "757:24:1"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 53,
+          "type": "t_bool",
+          "src": "876:25:1"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 102,
+          "type": "t_array:50<t_uint256>",
+          "src": "1891:29:1"
+        },
+        {
+          "contract": "VendingMachine",
+          "path": "contracts/VendingMachine.sol",
+          "label": "owner",
+          "astId": 6,
+          "type": "t_address",
+          "src": "205:13:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "VendingMachine/VendingMachine": [
+      {
+        "address": "0xBe0B0f08A599F07699E98A9D001084e97b9a900A",
+        "version": "0.1.0",
+        "implementation": "0x07a457d878BF363E0Bb5aa0B096092f941e19962"
+      }
+    ]
+  },
+  "zosversion": "2.2",
+  "version": "0.1.0",
+  "proxyAdmin": {
+    "address": "0xFA33c8EF8b5c4f3003361c876a298D1DB61ccA4e"
+  }
+}
